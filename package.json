@@ -5,5 +5,11 @@
   "version": "0.1.0",
   "scripts": {
     "start" : "node wine_pair_bot.js"
+  },
+   "dependencies": {
+    "express": "~4.9.x"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
