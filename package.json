@@ -1,0 +1,9 @@
+{
+  "main": "wine_pair_bot.js",
+  "name": "AcademicWinePairingBot",
+  "description": "A twitter bot that pairs wines to papers",
+  "version": "0.1.0",
+  "scripts": {
+    "start" : "node wine_pair_bot.js"
+  }
+}

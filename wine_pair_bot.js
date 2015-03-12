@@ -170,7 +170,7 @@ function initTweetBuild(){
 }
 
 //Every hour, attempt to tweet a wine paring
-//setInterval(function() {
+setInterval(function() {
 	var date = new Date();
 	if(date.getHours() % 20 == 0){
 		//get the current t.co max length
@@ -188,4 +188,4 @@ function initTweetBuild(){
 	}else{
 		initTweetBuild();
 	}
-//}, 3600000);
+}, 3600000);
