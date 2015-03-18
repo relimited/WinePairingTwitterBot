@@ -171,15 +171,15 @@ function createTweet(paperTitles){
 		}
 	}
 	
-	//console.log("tweet:\n" + tweet);
+	console.log("tweet:\n" + tweet);
 	//and do the actual tweeting
-	bot.tweet(tweet, function (err, reply) {
-        if(err){ 
-        	return handleError(err); 
-        }
+	//bot.tweet(tweet, function (err, reply) {
+        //if(err){ 
+        	//return handleError(err); 
+        //}
         
-    	console.log('\nTweet: ' + (reply ? reply.text : reply));
-	});
+    	//console.log('\nTweet: ' + (reply ? reply.text : reply));
+	//});
 }
 
 //Get the random seeds to build the initial tweet
@@ -213,4 +213,4 @@ setInterval(function() {
 	}else{
 		initTweetBuild();
 	}
-}, 3600000);
+}, 10800000);
