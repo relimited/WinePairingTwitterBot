@@ -67,7 +67,7 @@ function searchGoogleScholar(term1, term2){
 		hostname : "scholar.google.com",
 		port : 80,
 		method : 'GET',
-		path : "/scholar?hl=en&q="+encodeURI(term1)+"+"+encodeURI(term2)
+		path : "/scholar?as_sdt=1,5&q="+encodeURI(term1)+"+"+encodeURI(term2)+"&hl=en"
 	};
 	
 	var req = http.get(httpOptions, function(result){
@@ -85,11 +85,18 @@ function searchGoogleScholar(term1, term2){
   				var title = titles[i];
   				//now, unpack any and all title data
   				//console.log(title);
-  				var titleText = title.children[0];
+  				if(titleText == undefined){
+					console.log("title text was undfined");
+					console.log(title);
+					continue;
+				}
+				var titleText = title.children[0];
   				var finalText = "";
-  				for(var j = 0; j < titleText.children.length; j++){
-  					finalText = finalText + titleText.children[j].data;
-  				}
+				if(titleText.children){
+  					for(var j = 0; j < titleText.children.length; j++){
+  						finalText = finalText + titleText.children[j].data;
+  					}
+				}
   				//cull out any titles that contain undefined in them
   				if(finalText.indexOf("undefined") > -1){
   					continue;
