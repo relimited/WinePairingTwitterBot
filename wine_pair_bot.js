@@ -213,4 +213,4 @@ setInterval(function() {
 	}else{
 		initTweetBuild();
 	}
-}, 10800000);
+}, 5000);
