@@ -84,13 +84,13 @@ function searchGoogleScholar(term1, term2){
   			for(var i = 0; i < 9; i++){
   				var title = titles[i];
   				//now, unpack any and all title data
-  				//console.log(title);
-  				if(titleText == undefined){
+  				//console.log(title);	
+				var titleText = title.children[0];
+				if(titleText == undefined){
 					console.log("title text was undfined");
 					console.log("title", title);
 					continue;
 				}
-				var titleText = title.children[0];
   				var finalText = "";
 				if(titleText.children){
   					for(var j = 0; j < titleText.children.length; j++){
@@ -171,15 +171,15 @@ function createTweet(paperTitles){
 		}
 	}
 	
-	console.log("tweet:\n" + tweet);
+	//console.log("tweet:\n" + tweet);
 	//and do the actual tweeting
-	//bot.tweet(tweet, function (err, reply) {
-        //if(err){ 
-        	//return handleError(err); 
-        //}
+	bot.tweet(tweet, function (err, reply) {
+        if(err){ 
+        	return handleError(err); 
+        }
         
-    	//console.log('\nTweet: ' + (reply ? reply.text : reply));
-	//});
+    	console.log('\nTweet: ' + (reply ? reply.text : reply));
+	});
 }
 
 //Get the random seeds to build the initial tweet
@@ -195,7 +195,7 @@ function initTweetBuild(){
 }
 
 //Every hour, attempt to tweet a wine paring
-//setInterval(function() {
+setInterval(function() {
 	var date = new Date();
 	if(date.getHours() % 20 == 0){
 		//get the current t.co max length
@@ -213,4 +213,4 @@ function initTweetBuild(){
 	}else{
 		initTweetBuild();
 	}
-//}, 60000);
+}, 21600000);
