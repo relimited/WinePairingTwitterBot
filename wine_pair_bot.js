@@ -87,7 +87,7 @@ function searchGoogleScholar(term1, term2){
   				//console.log(title);
   				if(titleText == undefined){
 					console.log("title text was undfined");
-					console.log(title);
+					console.log("title", title);
 					continue;
 				}
 				var titleText = title.children[0];
@@ -145,7 +145,7 @@ function createTweet(paperTitles){
 		//now, get a grape
 		var grape = getGrape() + "";
 	
-		console.log(paperTitles, year, grape);
+		//console.log(paperTitles, year, grape);
 		
 		var tweet = "";
 		for(var i = 0; i < paperTitles.length; i++){
@@ -213,4 +213,4 @@ setInterval(function() {
 	}else{
 		initTweetBuild();
 	}
-}, 5000);
+}, 60000);
