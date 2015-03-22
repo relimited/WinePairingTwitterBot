@@ -84,13 +84,14 @@ function searchGoogleScholar(term1, term2){
   			for(var i = 0; i < 9; i++){
   				var title = titles[i];
   				//now, unpack any and all title data
-  				//console.log(title);	
-				var titleText = title.children[0];
+  				//console.log(title);
 				if(titleText == undefined){
 					console.log("title text was undfined");
 					console.log("title", title);
 					continue;
 				}
+
+				var titleText = title.children[0];
   				var finalText = "";
 				if(titleText.children){
   					for(var j = 0; j < titleText.children.length; j++){
