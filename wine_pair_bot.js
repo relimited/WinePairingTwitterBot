@@ -40,7 +40,7 @@ function getCurrentYear () {
 //return a potential wine year
 //0-6 years seems to be pretty safe for wine aging.  Plus, Twitter bots are best when they sometimes output madness
 function getWineYear () {
-	return getCurrentYear() - Math.floor(Math.random() * 6) + 1;
+	return getCurrentYear() - (Math.floor(Math.random() * 6) + 1);
 }
 
 function handleError(err) {
@@ -198,7 +198,7 @@ function initTweetBuild(){
 }
 
 //Every hour, attempt to tweet a wine paring
-setInterval(function() {
+//setInterval(function() {
 	var date = new Date();
 	if(date.getHours() % 20 == 0){
 		//get the current t.co max length
@@ -216,4 +216,4 @@ setInterval(function() {
 	}else{
 		initTweetBuild();
 	}
-}, 21600000);
+//}, 21600000);
