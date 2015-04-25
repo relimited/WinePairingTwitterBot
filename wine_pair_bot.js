@@ -221,4 +221,4 @@ setInterval(function() {
 	}else{
 		initTweetBuild();
 	}
-}, 21600000);
+}, 86400000);
