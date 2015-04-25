@@ -203,12 +203,12 @@ function initTweetBuild(){
 }
 
 //Every hour, attempt to tweet a wine paring
-//setInterval(function() {
+setInterval(function() {
 	var date = new Date();
 	if(date.getHours() % 20 == 0){
 		//get the current t.co max length
 		bot.getConfiguration(function(err, data, response){
-			//console.log("short_url_length_https:\n" + data.short_url_length_https);
+			console.log("short_url_length_https:\n" + data.short_url_length_https);
 			if(err){
 				return handleError(err);
 			}else{
@@ -221,4 +221,4 @@ function initTweetBuild(){
 	}else{
 		initTweetBuild();
 	}
-//}, 21600000);
+}, 21600000);
