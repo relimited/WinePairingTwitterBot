@@ -81,7 +81,7 @@ function searchGoogleScholar(term1, term2){
   			$ = cheerio.load(html);
   			var titles = $('h3[class=gs_rt]');
   			//just deal with the first page of titles for now
-  			for(var i = 0; i < 9; i++){
+  			for(var i = 0; i < titles.length; i++){
   				var title = titles[i];
 				if(title == undefined){
 					console.log("title was undefined");
