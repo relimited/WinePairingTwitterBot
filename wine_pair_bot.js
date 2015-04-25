@@ -63,6 +63,8 @@ function getRandObject(){
 //NOTE: this will break hard if google ever changes the layout of scholar returns.  But, a google scholar API doesn't exsist and 
 //I don't feel like using Python for the popular crowdsourced variant, so http requests for me!
 function searchGoogleScholar(term1, term2){
+	console.log("Starting Google Scholar Request")
+
 	var httpOptions = {
 		hostname : "scholar.google.com",
 		port : 80,
@@ -122,6 +124,7 @@ function searchGoogleScholar(term1, term2){
   		});
 	});
 	req.on('error', function(e){
+		console.log('Google Scholar Request problem.');
 		console.log('problem with request: ' + e.message);
 	});
 	req.end();
