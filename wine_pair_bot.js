@@ -179,15 +179,15 @@ function createTweet(paperTitles){
 		}
 	}
 	
-	//console.log("tweet:\n" + tweet);
+	console.log("tweet:\n" + tweet);
 	//and do the actual tweeting
-	bot.tweet(tweet, function (err, reply) {
-        if(err){ 
-        	return handleError(err); 
-        }
+	//bot.tweet(tweet, function (err, reply) {
+        //if(err){ 
+        	//return handleError(err); 
+        //}
         
-    	console.log('\nTweet: ' + (reply ? reply.text : reply));
-	});
+    	//console.log('\nTweet: ' + (reply ? reply.text : reply));
+	//});
 }
 
 //Get the random seeds to build the initial tweet
@@ -202,7 +202,7 @@ function initTweetBuild(){
 	//THE REST OF THE WORK IS DONE IN THE searchGoogleScholar Function because async HTTP requests, yo.
 }
 
-//Every hour, attempt to tweet a wine paring
+//Every day, attempt to tweet a wine paring
 setInterval(function() {
 	var date = new Date();
 	if(date.getHours() % 20 == 0){
@@ -221,4 +221,4 @@ setInterval(function() {
 	}else{
 		initTweetBuild();
 	}
-}, 86400000);
+}, 300000);
